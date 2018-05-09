@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    
+    <div id="login">
+      
+      <h2>
+        Login
+      </h2>
+      
+      <input type='text' placeholder="Username" id="loginUsername" />
+      <input type="password" placeholder="Password" id="loginPassword" />
+      <button type="submit" onclick="login()">
+        Login
+      </button>
+      
+    </div>
+    
+    <br>
+    
+    <div id="signup">
+      
+      <h2>
+        Signup
+      </h2>
+      
+      <input type='text' placeholder="Username" id="signupUsername" />
+      <input type="password" placeholder="Password" id="signupPassword" />
+      
+      <button type="submit" onclick="signup()">
+        signup
+      </button>
+      
+    </div>
+    
+    <script>
+      
+     var arr = [
+    {
+      "name" : "john",
+      "password" : "1234"
+    },
+    {
+      "name" : "doe",
+      "password" : "abcd"
+    },
+
+    {
+      "name" : "Greece",
+      "password" : "efgh"
+          },
+          {
+            "name" : "Rama",
+      "password" : "lmno"
+          }
+  ];
+      
+      
+      
+      function login() {
+        
+        username = document.getElementById('loginUsername').value;
+        password = document.getElementById('loginPassword').value;
+       
+        for(var i in arr) {
+         
+          if(username === arr[i] && password===arr[i]) {
+          alert("Logged In");
+        } else {
+          alert("Incorrect username or password");
+        }
+        }
+
+        document.write(arr[i].name);
+        
+
+      function signup() {
+        
+        username = document.getElementById('signupUsername').value;
+        password = document.getElementById('signupPassword').value;
+        
+        
+       
+        arr.push({
+    "name": "johndoe",
+    "password": "1234"
+  });
+        arr.push({
+    "name": "greecerama",
+    "password": "abcd"
+  });
+}
+    </script>
