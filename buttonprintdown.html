@@ -1,0 +1,17 @@
+       <input type="text" id="first-name" placeholder="Enter First Name" />
+       <input type="text" id="last-name" placeholder="Enter Last Name" />
+       <input type="text" id="dob" placeholder="Enter Date Of Birth" />
+       <button type="submit" id = "btn-go"> GO </button>
+
+       <div id="container"> </div>
+
+       <script>
+          document.getElementById('btn-go').addEventListener('click' , function(){
+              var firstName = document.getElementById('first-name').value;
+              var lastName = document.getElementById('last-name').value;
+              var dob = document.getElementById('dob').value;
+            
+              document.getElementById('container').innerHTML = "<p>First name: " + firstName + "<br/> Last name: " + lastName + "<br> Date of birth: " + dob + "</p>";
+
+          });
+       </script>

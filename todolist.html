@@ -1,0 +1,74 @@
+<html>
+  <head>
+  <title>To-do list</title>
+  <meta charset="utf-8">
+  <style>
+        body{ font-family: sans-serif; background-color: #E9EBEE; }
+       .wrapper {margin: auto; width: 80%; background-color: #FFFFFF; overflow: hidden; padding-left: 10px;}
+        button {cursor: pointer; height: 29px;}
+        #item {height: 28px; width: 45%; padding: 5px;}
+        h2 {text-align: center;}
+        li {padding: 6px;}
+        ol {list-style-image:url("tick.png"); }
+        img {width: 16px; height: 16px; cursor: pointer;}
+  </style>
+ </head>
+  
+  <body>
+   <div class = "wrapper">
+      <h2> To Do List App </h2>
+
+      <input type='text' placeholder='What is on your mind...' id='item' />
+
+      <button onclick='addItems()'> Add item </button>
+      <button onclick='clearList()'> Clear list </button>
+      <button onclick='clearField()'> Clear field </button>
+
+      <ol id='item-list'> </ol>
+  </div>
+   
+ </body>
+</html>
+
+<script>
+     var items = [];
+      
+      function addItems() {
+        var inputItem = document.getElementById("item").value;
+        if(inputItem.trim() !== "") {
+           items.push(inputItem);
+           ItemsListed();
+        }
+         clearField();
+      }
+
+      function ItemsListed() {
+        var eachItem = ""; 
+        var item = items.length - 1;
+           while(item >= 0) {
+               eachItem += "<li>" + items[item] + " <img onclick='removeItem("+item+")' src='remove.png' alt='Remove this list'> </li>";
+               item--;
+            }
+            document.getElementById('item-list').innerHTML =  eachItem;
+      }
+
+      function removeItem(item) {
+         if(isDeletePermission()) {
+            items.splice(item , 1);
+            ItemsListed();
+         }
+      }
+      
+      function isDeletePermission(){
+         return confirm('Are you sure to delete this item from list?');
+      }
+
+      function clearList() {
+        items.splice(0 , items.length);
+        ItemsListed();
+      }
+
+      function clearField(){
+         document.getElementById('item').value = "";
+      }
+</script>

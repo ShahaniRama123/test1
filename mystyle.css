@@ -1,0 +1,156 @@
+body{
+	  max-width: 1000px;
+    margin: auto;
+}
+
+.container{
+	margin-top: 10px;
+}
+
+.banner {
+	width: 795px;
+	height: 231px;
+}
+
+.blackbox{
+
+                 width:30%;
+                min-height: 230px;
+                background:#2D2D2D;
+                float:right;
+                position: relative;
+                top: -180px;
+                }
+
+
+.main{
+	            width:100%;
+                min-height:300px;
+                margin-top: 20px;
+                
+}
+
+            .content1{               /*content 1 */
+                float:left;
+                width:33%;
+                height:100%;
+                margin-top: 20px;
+                
+                text-align: left; 
+            }
+
+            .content2{   /*content 2 */
+
+            	 float:left;
+                width:33%;
+                height:100%;
+                text-align: left;
+                margin-top: 20px;
+                margin-left: 30px;
+
+                 
+            }
+
+
+            .content3{  /*content 3 */
+            	position: relative;
+            	top: -280px;
+            	 text-align: left;
+            	 margin-right: 50px;
+            	 left: 50px;            	 
+            	 }
+
+
+
+
+
+.button{
+	float: left;
+	background: #242324;
+	padding: 6px;
+	color: white;
+	font-size: 11px;
+	 
+	 font-transform: uppercase;
+
+}
+
+.button:hover {
+	background: black; color: white;
+}
+
+
+header h1 {
+	width: 174px;
+	height: 23px;
+	margin: 10px 10px;
+	float: left;
+}
+
+h1, h2{
+
+	letter-spacing: -1px;
+	
+}
+
+h2{
+	font-size: 26px;
+	font-family: arial; 
+	border-bottom: 1px solid #d1d1d1;
+	padding-bottom: 20px;
+	margin-bottom: 15px;
+
+}
+
+blockquote{
+	font-size: 25px;
+	line-height: 30px;
+	font-style: italic;
+	}
+
+
+p{
+	font-size: 13px;
+	line-height: 20px;
+	font-family: arial;
+	color: #353535;
+}
+
+
+a{             /* nav list */
+	color: #7e7e7e;
+	text-decoration: none;
+}
+
+a:hover, .selected{
+	color: black;
+}
+
+/* ------ nav ------ */
+
+nav{
+	float: right;
+    }
+
+
+
+nav li {
+	display: inline;
+	text-decoration: none;
+	padding: 10px;
+	font-family: arial;
+}
+
+nav a {
+	text-transform: lowercase;
+}
+
+.bot{
+	margin-top: 100px;
+	
+}
+
+
+footer{
+	clear: both;
+}

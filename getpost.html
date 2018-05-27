@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+  </head>
+  
+  <body>
+    <div>
+      <input type='text' id='username' placeholder='enter your name'/>
+      <input type='text' id='password' placeholder='enter your password' />
+      <button id='btnSubmit'>
+        Submit
+      </button>
+      <div>
+        To Get the data from Server
+        <button onCLick='getData()'>
+          GetData
+        </button>
+      </div>
+    </div>
+    <script>
+      $('#btnSubmit').on('click',function(){
+        
+        var name = $('#username').val();
+        var pass = $('#password').val();
+        alert(`${name}`);
+        console.log(`My name is ${name}`)
+        $.ajax({
+          type:'post',
+          url:'https://nodedatastore.herokuapp.com/umair',
+          contentType:'application/json',
+          data:JSON.stringify({
+            name: name,
+            pass: pass
+          }),
+          success: function(res){
+          console.log(res);
+            
+          }
+        })
+      })
+      
+      function getData(){
+        $.ajax({
+          type:'get',
+          url:'https://nodedatastore.herokuapp.com/umair',
+          success:function(res){
+            console.log(res)
+          }
+        })
+//         $.get('https://nodedatastore.herokuapp.com/umair',function(res){
+//           console.log(res);
+//         })
+      }
+      
+    </script>
+    
+  </body>
+</html>

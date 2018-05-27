@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    
+    <div id="login">
+      
+      <h2>
+        Login
+      </h2>
+      
+      <input type='text' placeholder="Username" id="loginUsername" />
+      <input type="password" placeholder="Password" id="loginPassword" />
+      <button type="submit" onclick="login()">
+        Login
+      </button>
+      
+    </div>
+    
+
+    <br>
+
+    
+    
+    <div id="signup">
+      
+      <h2>
+        Signup
+      </h2>
+      
+      <input type='text' placeholder="Username" id="signupUsername" />
+      <input type="password" placeholder="Password" id="signupPassword" />
+      <button type="submit" onclick="signup()">
+        Login
+      </button>
+      
+    </div>
+
+    <br>
+    
+    
+    <script>
+      
+      var username = "";
+      var password = "";
+      
+      var userArr = [];
+      
+      function login() {
+        
+        username = document.getElementById('loginUsername').value;
+        password = document.getElementById('loginPassword').value;
+        
+        if(username === userArr[0] && password === userArr[1]) {
+          alert("Logged In");
+        } else {
+          alert("Incorrect username or password");
+        }
+        
+      }
+      
+      function signup() {
+        
+        username = document.getElementById('signupUsername').value;
+        password = document.getElementById('signupPassword').value;
+        
+        userArr.push(username);
+        userArr.push(password);
+        
+      }
+      
+//       function login() {
+//         document.write("Login function called");
+//       }
+      
+      
+//       document.getElementById('btnSubmit').addEventListener('click',function() {
+//         var username = document.getElementById('username').value;
+//         var password = document.getElementById('password').value;
+        
+//         document.getElementById('container').innerHTML = username + " " + password;
+//       })
+      
+    </script>
+    
+  </body>
+</html>

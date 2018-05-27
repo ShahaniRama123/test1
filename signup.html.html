@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+      <h2>
+        Signup
+      </h2>
+      <input type='text' id='username' placeholder='Enter your name'/>
+      <input type='text' id='password' placeholder='Enter Password'/>
+      <button onclick='signup()'>
+        Signup
+      </button>
+    </div>
+    <div id='signupData'>
+      Show Signup Data
+    </div>
+    <script>
+
+      var username = "";
+      var password = "";
+      
+      var userArr = [];
+
+
+      function signup(){
+        user =  document.getElementById("username").value;
+        pass =  document.getElementById('password').value;
+       document.getElementById("signupData").innerHTML = username +' '+password;
+      }
+    </script>
+    
+  </body>
+</html>

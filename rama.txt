@@ -1,0 +1,10 @@
+
+var a=(math.random() * 10);
+var input= prompt("guess any number");
+if (a===10)
+{
+    document.write("right";)
+ else{
+
+  console.error("Enter message for error");
+ }

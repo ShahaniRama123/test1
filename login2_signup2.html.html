@@ -35,68 +35,47 @@
       
       <input type='text' placeholder="Username" id="signupUsername" />
       <input type="password" placeholder="Password" id="signupPassword" />
-      
       <button type="submit" onclick="signup()">
-        signup
+        Login
       </button>
       
     </div>
     
     <script>
       
-     var arr = [
-    {
-      "name" : "john",
-      "password" : "1234"
-    },
-    {
-      "name" : "doe",
-      "password" : "abcd"
-    },
-
-    {
-      "name" : "Greece",
-      "password" : "efgh"
-          },
-          {
-            "name" : "Rama",
-      "password" : "lmno"
-          }
-  ];
+     var username = "";
+      var password = "";
       
-      
+      var userArr = [];
       
       function login() {
         
         username = document.getElementById('loginUsername').value;
         password = document.getElementById('loginPassword').value;
-       
-        for(var i in arr) {
-         
-          if(username === arr[i] && password===arr[i]) {
+        for(var i in userArr){
+            if(userArr%2===0){
+                username+=userArr[i];
+            }
+            else{
+              password+=userArr[i];  
+            }
+        
+
+        if(username === username && password === password) {
           alert("Logged In");
         } else {
           alert("Incorrect username or password");
         }
-        }
-
-        document.write(arr[i].name);
         
-
+      }}
+      
       function signup() {
         
         username = document.getElementById('signupUsername').value;
         password = document.getElementById('signupPassword').value;
         
+        userArr.push(username);
+        userArr.push(password);
         
-       
-        arr.push({
-    "name": "johndoe",
-    "password": "1234"
-  });
-        arr.push({
-    "name": "greecerama",
-    "password": "abcd"
-  });
-}
+      }
     </script>

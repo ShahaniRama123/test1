@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    
+    <input type='text' id='input' placeholder='Add Item' />
+    <button type='submit' id='btnSubmit' onclick='addItems()'>
+      Add
+    </button>
+    
+    <div id='container'>
+      
+    </div>
+    
+  </body>
+</html>
+
+
+<script>
+
+  var DATA = [];
+  
+  function addItems() {
+    var item = document.getElementById('input').value;
+    DATA.push(item);
+    
+    document.getElementById('container').innerHTML = '';
+    
+    document.getElementById('input').value = '';
+    
+    for(var i in DATA) {
+      document.getElementById('container').innerHTML += "<div id="+i+"><input type='checkbox' onclick='deleteItem(this.parentNode.id)' />" + DATA[i] + "</div>";
+    }
+    
+  }
+  
+  function deleteItem(Id) {
+    //Remove div from HTML
+    document.getElementById(Id).parentNode.removeChild(document.getElementById(Id));
+    
+    //Remove Item from Array
+    DATA.splice(Id,1);
+  }
+
+</script>

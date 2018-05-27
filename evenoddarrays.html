@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+  <head>
+      <title>JavaScript Array Assignment</title>
+      <meta charset="utf-8">
+  </head>
+  <body>
+
+       
+      
+   <script>
+
+        /*
+        1. Array [1,1,1,1,2,2,2,2,1,1,1];
+        2. Check if array is Even or Odd.
+        3. Print only those numbers which are less then the other.
+        4. If both even and odd are equal, then throw error console.error()
+        
+        */
+
+
+
+        
+      // numberArray[] main array/source array declared.
+      var numberArray = [7, 3, 9, 4, 10, 80, 10];
+      // getEvenArrays[] is used to store all Even elements in it.
+      var getEvenArrays = [];
+      // getOddArrays[] is used to store all Odd elements in it.
+      var getOddArrays = [];
+      // totalEven local variable is used to store total no of Even elements.
+      var totalEven = 0;
+      // totalOdd local variable is used to store total no of Odd elements.
+      var totalOdd = 0;
+      // Loop through main/source numberArray[] and get all available numbers in it.
+      for (var index in numberArray) {
+          // Check if any number inside main/source numberArray[] is Even.
+          if (numberArray[index] % 2 === 0) {
+            totalEven++; // Count total Even elements.
+            getEvenArrays.push(numberArray[index]); // All Even numbers will be pushed/add inside getEvenArrays[].
+          }
+          // If any number inside main/source numberArray[] is Odd.
+          else {
+              totalOdd++; // Count total Odd elements.
+              getOddArrays.push(numberArray[index]); // // All Odd numbers will be pushed/add inside getOddArrays[].
+          }
+      }
+      // If both Total Even and Odd are equals.
+      if (totalOdd === totalEven) {
+          console.error("Oops Its ERROR !! Both Even and Odd numbers in array are equals!!"); // Throw error
+          console.log(getEvenArrays + " Total Even :" + totalEven); // Print Even result.
+          console.log(getOddArrays + " Total Odd :" + totalOdd);    // Print Odd result.
+      }
+      //Else/Or check if totalOdd is less then totalEven then print totalOdd.
+      else if (totalOdd < totalEven) 
+           document.write("Odd Array Elements: " + getOddArrays + " Total: " + totalOdd);
+      else // else/Or print totalEven.
+           document.write("Even Array Elements: " + getEvenArrays + " Total: " + totalEven);
+    </script>
+  </body>
+</html>

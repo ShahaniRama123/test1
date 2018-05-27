@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+  <head>
+     <title>Js String Word & Sentance Reverse</title>
+     <meta charset="utf-8">
+  </head>
+  <body>
+     <script>
+         // Following function is reversing a Word.
+         function reverseStringWord(inputString) {
+           var index = inputString.length - 1;
+            while(index >= 0) {
+               document.write(inputString[index] + " ");
+               index--;
+            }
+         }
+          
+         // Following function is reversing whole Sentence.
+         function reverseStringSentence(inputSentence) {
+           var stringArray = inputSentence.split(" ");
+           var index = stringArray.length - 1;
+            while(index >= 0) {
+               document.write(stringArray[index] + " ");
+               index--;
+            }
+         }
+         reverseStringWord("Abcdefghijklmnopqrstuvwxyz");
+         document.writeln("<br/>");
+         
+         reverseStringSentence("My name is Rama Ahuja Shahani");
+         
+     </script>
+  </body>
+</html>
