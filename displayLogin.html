@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    
+    <div id="login">
+      
+      <h2>
+        Login
+      </h2>
+      
+      <input type='text' placeholder="Username" id="loginUsername" />
+      <input type="password" placeholder="Password" id="loginPassword" />
+      <button type="submit" onclick="login()">
+        Login
+      </button>
+      
+    </div>
+    
+    <br>
+    
+    <div id="signup">
+      
+      <h2>
+        Signup
+      </h2>
+      
+      <input type='text' placeholder="Username" id="signupUsername" />
+      <input type="password" placeholder="Password" id="signupPassword" />
+      
+      <button type="submit" onclick="signup()">
+        signup
+      </button>
+      
+    </div>
+    
+    <script>
+
+       var arr = [];
+      function login() {
+        
+        var username = document.getElementById('loginUsername').value;
+         var password = document.getElementById('loginPassword').value;
+       
+        for(var i in arr) {
+
+          document.write(arr[i].username + "<br>");
+        }
+      }
+
+
+      
+
+       
+
+      function signup() {
+        
+        var name = "";
+      var password1 = "";
+     name = document.getElementById('signupUsername').value;
+      password1 = document.getElementById('signupPassword').value;
+        
+        arr.push({
+          "username":name,
+       
+          "password": password1
+        });
+        // arr.push(password);
+        console.log(arr);
+        }
+            </script>

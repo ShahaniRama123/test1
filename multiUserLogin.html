@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <style>
+      #container{
+        font-family:monospace;
+        font-weight:bold;
+      }
+    </style>
+    
+  </head>
+  
+  <body>
+    <div>
+      <h2>
+        Signup
+      </h2>
+      <input type='text' id='username' placeholder='Enter your name'/>
+      <input type='text' id='password' placeholder='Enter Password'/>
+      <button onclick='signup()'>
+        Signup
+      </button>
+    </div>
+
+
+    <div>
+        <h2>Login</h2>
+        <input type='text' id='loguser' placeholder='Enter your name'/>
+        <input type='text' id='logpass' placeholder='Enter Password'/>
+        <button onclick='login()'>
+          Login
+        </button>
+    </div>
+
+   
+    <script>
+      var arraForm = [];
+      function signup() {
+       
+       let user =  document.getElementById("username").value;
+       let pass =  document.getElementById('password').value;
+
+       arraForm.push({"name" : user, "pass" : pass});
+
+       console.log(arraForm);
+      }
+
+      function login(){
+
+         var u = document.getElementById('loguser').value;
+         var p = document.getElementById('logpass').value;
+
+         for (var index = 0; index < arraForm.length; index++) {
+         if (arraForm[index].name === u && arraForm[index].pass === p)
+              alert('Welcome you are authenticated !');
+         }
+      }
+    </script>
+    
+  </body>
+</html>
